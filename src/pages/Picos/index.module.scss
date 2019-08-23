@@ -1,0 +1,38 @@
+.container {
+  border: 1px solid red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    border: 1px solid goldenrod;
+    height: 100px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      width: 100px;
+      height: 30px;
+    }
+  }
+
+  .menuContainer {
+    border: 1px solid green;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: center;
+
+    .menuItem {
+      border: 1px solid palegreen;
+      margin: 10px 5px;
+      background: khaki;
+      width: 250px;
+      height: 350px;
+    }
+  }
+}
