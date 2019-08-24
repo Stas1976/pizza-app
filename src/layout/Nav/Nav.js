@@ -2,8 +2,11 @@ import React from 'react';
 import style from './index.module.scss';
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo/pizza.png';
+import BagIcon from '../../components/BagIcon/BagIcon';
+import { connect } from 'react-redux';
+import CartDropDown from '../../components/CartDropDown/CartDropDown';
 
-const Nav = () => {
+const Nav = ({ toggleDropDownCart }) => {
   return (
     <nav className={style.header}>
       <NavLink
@@ -43,9 +46,15 @@ const Nav = () => {
         >
           Gerimai
         </NavLink>
+        <BagIcon />
       </div>
+      {toggleDropDownCart ? null : <CartDropDown />}
     </nav>
   );
 };
 
-export default Nav;
+const mapStateToProps = state => {
+  return { toggleDropDownCart: state.cartReducer.toggleDropDownCart };
+};
+
+export default connect(mapStateToProps)(Nav);

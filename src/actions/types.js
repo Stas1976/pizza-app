@@ -1,3 +1,5 @@
 export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 export const SELECTED_PICA = 'SELECTED_PICA';
 export const ADD_ITEM_TO_CART = 'ADD_ITEM_TO_CART';
+export const TOGGLE_BAG_ICON = 'TOGGLE_BAG_ICON';
+export const HIDDE_DROP_DOWN_CART = 'HIDDE_DROP_DOWN_CART';

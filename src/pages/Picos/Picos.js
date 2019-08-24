@@ -7,7 +7,12 @@ import Modal from '../../components/Modal/Modal';
 import * as action from '../../actions/cartAction';
 
 const Picos = props => {
-  const { toggleOnOffModal, showModal, selectedPicaAction } = props;
+  const {
+    toggleOnOffModal,
+    showModal,
+    selectedPicaAction,
+    hiddeDropDownCart
+  } = props;
 
   const pizza = db.Picos.filter(pizza => {
     return pizza.size === 's';
@@ -18,6 +23,7 @@ const Picos = props => {
         onClick={() => {
           selectedPicaAction(pizza);
           toggleOnOffModal();
+          hiddeDropDownCart();
         }}
       >
         <img src={pizza.image} alt="pica" />
@@ -31,6 +37,7 @@ const Picos = props => {
             onClick={() => {
               selectedPicaAction(pizza);
               toggleOnOffModal();
+              hiddeDropDownCart();
             }}
             className={style.customeButton}
           >

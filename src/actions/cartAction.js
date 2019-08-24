@@ -19,3 +19,15 @@ export const addItemToCart = payload => {
     payload
   };
 };
+
+export const toggleDropDownCart = () => {
+  return {
+    type: types.TOGGLE_BAG_ICON
+  };
+};
+
+export const hiddeDropDownCart = () => {
+  return {
+    type: types.HIDDE_DROP_DOWN_CART
+  };
+};

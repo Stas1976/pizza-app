@@ -1,0 +1,97 @@
+@import '../../sass/vars';
+
+.container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: white;
+  top: 90px;
+  right: 40px;
+  z-index: 5;
+  width: 300px;
+  border: 1px solid $color-orange;
+  color: $color-black;
+  border-radius: 10px;
+
+  .list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .image {
+      height: 64px;
+      width: 64px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      width: 150px;
+
+      .name {
+        font-weight: bold;
+        color: $color-black;
+        margin: 5px;
+      }
+
+      .size {
+        color: $color-black;
+        margin: 0 5px;
+      }
+
+      .counter {
+        display: flex;
+        justify-content: space-between;
+        justify-items: center;
+        align-items: center;
+        width: 90px;
+        height: 40px;
+        margin: 5px;
+
+        .plus {
+          font-size: 24px;
+          height: 30px;
+          width: 30px;
+          border: 2px solid $color-orange;
+          text-align: center;
+          border-radius: 8px;
+          display: felx;
+          align-items: flex-start;
+          cursor: pointer;
+        }
+      }
+
+    }
+
+    .trash {
+      height: 80px;
+      width: 70px;
+      padding: 3px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      .bin {
+        cursor: pointer;
+        margin: 5px;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+        &:hover {
+          margin: 7px;
+        }
+      }
+
+    }
+  }
+
+  .orderSum {
+    margin-top: 8px;
+  }
+}

@@ -1,19 +1,23 @@
-import React from 'react';
-import style from './index.module.scss';
-import { connect } from 'react-redux';
-import { addItemToCart } from '../../actions/cartAction';
+// import React from 'react';
+// import style from './index.module.scss';
+// import { connect } from 'react-redux';
+// import * as action from '../../actions/cartAction';
 
-const Cart = ({ selectPizzaBySize, test }) => {
-  return (
-    <div>
-      <button onClick={console.log(selectPizzaBySize)} className={style.btn}>
-        Į Krėpšelį
-      </button>
-    </div>
-  );
-};
+// const Cart = ({ selectPizzaBySize, addItemToCart }) => {
+//   console.log(selectPizzaBySize[0]);
+//   return (
+//     <div>
+//       <button
+//         onClick={() => addItemToCart(selectPizzaBySize[0])}
+//         className={style.btn}
+//       >
+//         Į Krėpšelį
+//       </button>
+//     </div>
+//   );
+// };
 
-export default connect(
-  null,
-  addItemToCart
-)(Cart);
+// export default connect(
+//   null,
+//   action
+// )(Cart);

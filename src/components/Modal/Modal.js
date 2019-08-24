@@ -4,7 +4,6 @@ import * as action from '../../actions/cartAction';
 import { connect } from 'react-redux';
 import SelectPizzaSize from '../SelectPizzaSize/SelectPizzaSize';
 import { db } from '../../assets/db/db';
-import Cart from '../../components/Cart/Cart';
 
 class Modal extends Component {
   state = {
@@ -14,8 +13,8 @@ class Modal extends Component {
   selectPizzaSize = e => this.setState({ pizzaSize: e });
 
   render() {
-    const { toggleOnOffModal } = this.props;
-    const { image, name, about, price, size, id } = this.props.selectedPica;
+    const { toggleOnOffModal, addItemToCart } = this.props;
+    const { image, name, about } = this.props.selectedPica;
     const selectPizzaBySize = db.Picos.filter(pizza => {
       return (
         this.props.selectedPica.name === pizza.name &&
@@ -47,7 +46,13 @@ class Modal extends Component {
                   pizzaSize={this.state.pizzaSize}
                 />
               </dir>
-              <Cart selectPizzaBySize={selectPizzaBySize[0]} />
+
+              <button
+                onClick={() => addItemToCart(selectPizzaBySize[0])}
+                className={style.btn}
+              >
+                Į Krėpšelį
+              </button>
             </div>
           </div>
         </div>
