@@ -1,18 +1,20 @@
+@import '../../sass/vars';
+
 .container {
-  border: 1px solid red;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: $color-black;
 
   .title {
-    border: 1px solid goldenrod;
     height: 100px;
-    width: 90%;
+    width: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: whitesmoke;
 
     h3 {
       width: 100px;
@@ -21,18 +23,57 @@
   }
 
   .menuContainer {
-    border: 1px solid green;
     display: flex;
     flex-wrap: wrap;
     width: 90%;
     justify-content: center;
 
     .menuItem {
-      border: 1px solid palegreen;
       margin: 10px 5px;
-      background: khaki;
       width: 250px;
-      height: 350px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: whitesmoke;
+
+      .itemImg {
+        margin: 7px;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.9;
+          margin: 5px;
+        }
+      }
+
+      .itemInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .itemName {
+          align-self: flex-start;
+          margin-left: 7px;
+          font-weight: bold;
+        }
+
+        .about {
+          text-align: left;
+          margin: 5px 7px;
+        }
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 7px 7px 7px;
+
+        .price {
+          font-weight: bold;
+        }
+      }
     }
   }
 }

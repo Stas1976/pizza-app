@@ -1,0 +1,3 @@
+export const TOGGLE_MODAL = 'TOGGLE_MODAL';
+export const SELECTED_PICA = 'SELECTED_PICA';
+export const ADD_ITEM_TO_CART = 'ADD_ITEM_TO_CART';

@@ -5,7 +5,7 @@ import App from './App';
 import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import cartReducer from './reducers/carReducer';
+import cartReducer from './reducers/cartReducer';
 
 const rootReducer = combineReducers({
   cartReducer
