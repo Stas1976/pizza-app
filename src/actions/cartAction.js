@@ -31,3 +31,17 @@ export const hiddeDropDownCart = () => {
     type: types.HIDDE_DROP_DOWN_CART
   };
 };
+
+export const removeItemFromCart = payload => {
+  return {
+    type: types.REMOVE_ITEM_FROM_CART,
+    payload
+  };
+};
+
+export const clearItemFromCart = payload => {
+  return {
+    type: types.CLEAR_ITEM_FROM_CART,
+    payload
+  };
+};

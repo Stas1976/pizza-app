@@ -1,9 +1,14 @@
 import React from 'react';
 import style from './index.module.scss';
 import { connect } from 'react-redux';
+import * as action from '../../actions/cartAction';
 
-const CartDropDown = ({ cart }) => {
-  console.log(cart);
+const CartDropDown = ({
+  cart,
+  addItemToCart,
+  removeItemFromCart,
+  clearItemFromCart
+}) => {
   const itemsInCart = cart.map(item => {
     let size = '';
     if (item.size === 's') {
@@ -13,6 +18,7 @@ const CartDropDown = ({ cart }) => {
     } else {
       size = '35cm';
     }
+
     return (
       <li className={style.list} key={item.id}>
         <img className={style.image} src={item.image} alt="pica img" />
@@ -20,24 +26,37 @@ const CartDropDown = ({ cart }) => {
           <span className={style.name}>{item.name}</span>
           <span className={style.size}>Size: {size}</span>
           <div className={style.counter}>
-            <button className={style.plus}>-</button>0
-            <button className={style.plus}>+</button>
+            <div
+              onClick={() => removeItemFromCart(item)}
+              className={style.plus}
+            >
+              -
+            </div>
+            {item.quantity}
+            <div onClick={() => addItemToCart(item)} className={style.plus}>
+              +
+            </div>
           </div>
         </div>
         <div className={style.trash}>
-          <div className={style.bin}>
+          <div onClick={() => clearItemFromCart(item)} className={style.bin}>
             <i className="fas fa-trash-alt"></i>
           </div>
-          <span className={style.price}>{item.price}€</span>
+          <span className={style.price}>{item.quantity * item.price}€</span>
         </div>
       </li>
     );
   });
+
+  const SumOfOrder = cart.reduce((acc, curr) => {
+    return acc + curr.price * curr.quantity;
+  }, 0);
+
   return (
     <div className={style.container}>
       <ul>{itemsInCart}</ul>
       <hr />
-      <div className={style.orderSum}>Užsakymo suma: 0</div>
+      <div className={style.orderSum}>Užsakymo suma: {SumOfOrder}€</div>
     </div>
   );
 };
@@ -47,4 +66,7 @@ const mapStateToProps = state => {
   return { cart };
 };
 
-export default connect(mapStateToProps)(CartDropDown);
+export default connect(
+  mapStateToProps,
+  action
+)(CartDropDown);
