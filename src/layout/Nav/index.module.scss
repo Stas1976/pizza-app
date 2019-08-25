@@ -1,9 +1,16 @@
+@import '../../sass/vars';
+
+
 .header {
   height: 50px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+
+  .active {
+    border-bottom: 5px solid $color-orange;
+  }
 
   .logoContainer {
     height: 100%;
@@ -31,8 +38,4 @@
       cursor: pointer;
     }
   }
-}
-
-.active {
-  border-bottom: green;
 }

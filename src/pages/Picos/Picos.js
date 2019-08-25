@@ -39,7 +39,7 @@ const Picos = props => {
               toggleOnOffModal();
               hiddeDropDownCart();
             }}
-            className={style.customeButton}
+            className={style.btn}
           >
             Pasirinkti
           </CustomeButton>

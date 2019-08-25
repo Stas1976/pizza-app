@@ -5,11 +5,17 @@ const initialState = {
   toggleModal: true,
   selectedPica: {},
   cart: [],
-  toggleDropDownCart: true
+  toggleDropDownCart: true,
+  toggleToOrderConfirmation: false
 };
 
 const itemsCart = (state = initialState, action) => {
   switch (action.type) {
+    case types.TOGGLE_TO_ORDER_CONFIRMATION:
+      return {
+        ...state,
+        toggleToOrderConfirmation: !state.toggleToOrderConfirmation
+      };
     case types.CLEAR_ITEM_FROM_CART:
       return {
         ...state,

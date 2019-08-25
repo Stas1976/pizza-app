@@ -14,80 +14,25 @@
   color: $color-black;
   border-radius: 10px;
 
-  .list {
+  .close {
+    position: absolute;
+    left: 100%;
+    margin-left: 5px;
+    top: 0;
+    border: 2px solid $color-orange;
+    border-radius: 50%;
+    font-weight: 600;
+    color: $color-orange;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
 
-    .image {
-      height: 64px;
-      width: 64px;
-    }
-
-    .info {
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-      width: 150px;
-
-      .name {
-        font-weight: bold;
-        color: $color-black;
-        margin: 5px;
-      }
-
-      .size {
-        color: $color-black;
-        margin: 0 5px;
-      }
-
-      .counter {
-        display: flex;
-        justify-content: space-between;
-        justify-items: center;
-        align-items: center;
-        width: 90px;
-        height: 40px;
-        margin: 5px;
-
-        .plus {
-          font-size: 24px;
-          height: 30px;
-          width: 30px;
-          border: 2px solid $color-orange;
-          text-align: center;
-          border-radius: 8px;
-          display: felx;
-          align-items: flex-start;
-          cursor: pointer;
-        }
-      }
-
-    }
-
-    .trash {
-      height: 80px;
-      width: 70px;
-      padding: 3px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-
-      .bin {
-        cursor: pointer;
-        margin: 5px;
-        height: 30px;
-        width: 30px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-
-        &:hover {
-          margin: 7px;
-        }
-      }
-
+    &:hover {
+      color: white;
+      background: $color-orange;
     }
   }
 

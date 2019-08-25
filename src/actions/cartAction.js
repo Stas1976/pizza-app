@@ -45,3 +45,9 @@ export const clearItemFromCart = payload => {
     payload
   };
 };
+
+export const toggleToOrderConfirmation = () => {
+  return {
+    type: types.TOGGLE_TO_ORDER_CONFIRMATION
+  };
+};

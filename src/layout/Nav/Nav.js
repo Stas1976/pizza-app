@@ -9,12 +9,7 @@ import CartDropDown from '../../components/CartDropDown/CartDropDown';
 const Nav = ({ toggleDropDownCart }) => {
   return (
     <nav className={style.header}>
-      <NavLink
-        className={style.logoContainer}
-        activeClassName={style.active}
-        to="/"
-      >
-        {/* Home */}
+      <NavLink className={style.logoContainer} to="/">
         <img src={logo} alt="pizza logo" className={style.logo} />
       </NavLink>
       <div className={style.options}>

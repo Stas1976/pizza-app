@@ -1,24 +1,34 @@
-.cartIcon {
-  width: 45px;
-  height: 45px;
-  position: relative;
+@import '../../sass/vars';
+
+.container {
   display: flex;
-
+  margin: 0 5px 0 30px;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+  padding: 8px;
+  // width: 150px;
+  height: 30px;
+  border: 2px solid $color-orange;
+  border-radius: 5px;
   cursor: pointer;
-  color: rgb(221, 105, 62);
+  color: $color-orange;
 
-  .shoppingIcon {
-    width: 24px;
-    height: 24px;
+  .name {
+    font-weight: 600;
+    margin-right: 5px;
+  }
+
+  .divider {
+    font-weight: 600;
+    margin: 0 5px;
   }
 
   .itemCount {
-    position: absolute;
-    left: center;
-    font-size: 10px;
-    font-weight: bold;
-    bottom: 12px;
+    margin: 5px;
+  }
+
+  &:hover {
+    background-color: $color-orange;
+    color: white;
   }
 }
