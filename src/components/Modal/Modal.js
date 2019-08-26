@@ -42,7 +42,7 @@ class Modal extends Component {
           <div className={style.info}>
             <div className={style.top}>
               <div onClick={this.infoToggle} className={style.infoIcon}>
-                <i class="fas fa-info-circle"></i>
+                <i className="fas fa-info-circle"></i>
               </div>
               {info ? <div className={style.infoBlock}>Info:</div> : null}
               <div className={style.name}>{name}</div>
@@ -68,7 +68,7 @@ class Modal extends Component {
                   this.popUpShow();
                   setTimeout(() => {
                     this.setState({ popUp: false });
-                  }, 3000);
+                  }, 800);
                 }}
                 className={style.btn}
               >

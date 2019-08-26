@@ -6,6 +6,7 @@ import chicken from '../images/chickenBBQ.jpg';
 import mexican from '../images/mexican.jpg';
 import margherita from '../images/margherita.jpg';
 import seafood from '../images/seafood.jpg';
+import padazas from '../images/padazas.jpg';
 
 export const db = {
   Picos: [
@@ -218,6 +219,16 @@ export const db = {
       price: 12.5,
       size: 'l',
       id: 'p24'
+    }
+  ],
+  Padazas: [
+    {
+      image: padazas,
+      name: 'Hellmans',
+      about: 'Porcijinis kečupas',
+      price: 0.15,
+      size: 's',
+      id: 'pad01'
     }
   ]
 };
