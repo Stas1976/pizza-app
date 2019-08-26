@@ -43,7 +43,6 @@ const OrderCart = ({
             <i className="fas fa-trash-alt"></i>
           </div>
         </div>
-        <hr className={style.hr} />
       </li>
     );
   });
