@@ -17,8 +17,10 @@ const Cart = ({
       size = '25cm';
     } else if (item.size === 'm') {
       size = '30cm';
-    } else {
+    } else if (item.size === 'l') {
       size = '35cm';
+    } else {
+      size = 'tradicinis';
     }
 
     return (

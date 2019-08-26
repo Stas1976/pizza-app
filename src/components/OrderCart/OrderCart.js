@@ -15,8 +15,10 @@ const OrderCart = ({
       size = '25cm';
     } else if (item.size === 'm') {
       size = '30cm';
-    } else {
+    } else if (item.size === 'l') {
       size = '35cm';
+    } else {
+      size = 'tradicinis';
     }
 
     return (
@@ -36,7 +38,9 @@ const OrderCart = ({
           </div>
         </div>
 
-        <span className={style.price}>{item.quantity * item.price}€</span>
+        <span className={style.price}>
+          {(item.quantity * item.price).toFixed(2)}€
+        </span>
 
         <div className={style.trash}>
           <div onClick={() => clearItemFromCart(item)} className={style.bin}>

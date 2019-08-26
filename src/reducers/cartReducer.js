@@ -6,7 +6,7 @@ const initialState = {
   selectedPica: {},
   cart: [],
   toggleDropDownCart: true,
-  toggleToOrderConfirmation: true
+  toggleToOrderConfirmation: false
 };
 
 const itemsCart = (state = initialState, action) => {

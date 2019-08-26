@@ -1,0 +1,78 @@
+@import '../../sass/vars';
+
+
+.container {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .spn {
+    margin: 15px;
+    font-weight: 600;
+  }
+
+  .ul {
+    width: 100%;
+    padding: 15px;
+    height: 100%;
+
+    .list {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: space-between;
+      align-items: center;
+
+      .image {
+        height: 60px;
+        width: 80px;
+      }
+
+      .about {
+        display: flex;
+        flex-direction: column;
+        height: 70%;
+        width: 250px;
+        justify-content: space-between;
+        align-items: flex-start;
+        font-weight: 500;
+        color: $color-black;
+      }
+
+      .btn {
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        float: left;
+        height: 40px;
+        background: white;
+        width: 80px;
+        border: 2px solid $color-orange;
+        border-radius: 10px;
+        color: $color-orange;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        font-size: 14px;
+        cursor: pointer;
+        margin: 0 3px;
+        align-self: center;
+
+
+
+        &:focus {
+          outline: none
+        }
+
+        &:hover {
+          background: $color-orange;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .hr {
+    width: 100%;
+  }
+}

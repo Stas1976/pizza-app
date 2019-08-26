@@ -227,7 +227,7 @@ export const db = {
       name: 'Hellmans',
       about: 'Porcijinis kečupas',
       price: 0.15,
-      size: 's',
+      size: 'padazas',
       id: 'pad01'
     }
   ]

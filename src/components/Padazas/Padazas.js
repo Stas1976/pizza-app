@@ -10,11 +10,17 @@ class Padazas extends React.Component {
     const { addItemToCart } = this.props;
     const padazas = db.Padazas.map(item => {
       return (
-        <li key={item.id}>
-          {item.name}
-          {item.about}
-          {item.price}
-          <button onClick={() => addItemToCart(item)}>Į krepšelį</button>
+        <li key={item.id} className={style.list}>
+          <img className={style.image} src={item.image} alt="Ketchup" />
+          <div className={style.about}>
+            <div>{item.name}</div>
+            <div>{item.about}</div>
+            <div> Kaina: {item.price}€</div>
+          </div>
+
+          <button className={style.btn} onClick={() => addItemToCart(item)}>
+            Į krepšelį
+          </button>
         </li>
       );
     });
@@ -22,7 +28,8 @@ class Padazas extends React.Component {
     return (
       <div className={style.container}>
         <span className={style.spn}>Padažas</span>
-        <ul>{padazas}</ul>
+        <ul className={style.ul}>{padazas}</ul>
+        <hr className={style.hr} />
       </div>
     );
   }
