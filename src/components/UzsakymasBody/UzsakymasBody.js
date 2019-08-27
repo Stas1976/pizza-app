@@ -3,6 +3,8 @@ import style from './index.module.scss';
 import OrderCart from '../OrderCart/OrderCart';
 import { connect } from 'react-redux';
 import Padazas from '../Padazas/Padazas';
+import OrderConfirm from '../OrderConfirm/OrderConfirm';
+import Footer from '../Footer/Footer';
 
 const UzsakymasBody = ({ showCart }) => {
   return (
@@ -17,6 +19,8 @@ const UzsakymasBody = ({ showCart }) => {
 
       <hr className={style.hr} />
       <Padazas />
+      <OrderConfirm />
+      <Footer />
     </div>
   );
 };

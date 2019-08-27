@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './index.module.scss';
-import padazas from '../../assets/images/padazas.jpg';
 import { connect } from 'react-redux';
 import * as action from '../../actions/cartAction';
 import { db } from '../../assets/db/db';
