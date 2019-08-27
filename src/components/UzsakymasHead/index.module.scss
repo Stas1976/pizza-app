@@ -40,18 +40,28 @@
         justify-content: center;
         align-items: center;
       }
+    }
 
-      .active {
-        color: black;
+    .active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: black;
+      width: 100px;
+      height: 94px;
+      font-weight: 600;
+
+      .number {
         margin: 10px;
         height: 30px;
         width: 30px;
         align-self: center;
-        border: 1px solid green;
+        border: 2px solid black;
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
+        font-weight: 600;
       }
     }
   }

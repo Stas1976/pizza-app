@@ -4,9 +4,8 @@ import OrderCart from '../OrderCart/OrderCart';
 import { connect } from 'react-redux';
 import Padazas from '../Padazas/Padazas';
 import OrderConfirm from '../OrderConfirm/OrderConfirm';
-import Footer from '../Footer/Footer';
 
-const UzsakymasBody = ({ showCart }) => {
+const UzsakymasBody = ({ nextStep, showCart }) => {
   return (
     <div className={style.container}>
       <h2 className={style.head}>Krepšelis</h2>
@@ -19,8 +18,7 @@ const UzsakymasBody = ({ showCart }) => {
 
       <hr className={style.hr} />
       <Padazas />
-      <OrderConfirm />
-      <Footer />
+      <OrderConfirm nextStep={nextStep} />
     </div>
   );
 };

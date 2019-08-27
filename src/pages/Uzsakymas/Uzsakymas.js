@@ -4,20 +4,35 @@ import { connect } from 'react-redux';
 import * as action from '../../actions/cartAction';
 import UzsakymasHead from '../../components/UzsakymasHead/UzsakymasHead';
 import UzsakymasBody from '../../components/UzsakymasBody/UzsakymasBody';
+import Footer from '../../components/Footer/Footer';
+import Adresas from '../../components/Adresas/Adresas';
+import OrderComplete from '../../components/OrderComplete/OrderComplete';
 
-const Uzsakymas = () => {
-  return (
-    <div className={style.container}>
-      <UzsakymasHead />
-      <hr />
-      <UzsakymasBody />
-    </div>
-  );
-};
+class Uzsakymas extends React.Component {
+  state = {
+    activeStep: 0
+  };
 
-// const mapStateToProps = state =>{
-//   return{
-//   toggleOrderPage: state.cartReducer.toggleToOrderConfirmation}}
+  nextStep = activeStep => this.setState({ activeStep });
+
+  render() {
+    const { activeStep } = this.state;
+    return (
+      <div className={style.container}>
+        <UzsakymasHead activeStep={activeStep} />
+        <hr />
+        {activeStep === 0 ? (
+          <UzsakymasBody nextStep={this.nextStep} />
+        ) : activeStep === 1 ? (
+          <Adresas nextStep={this.nextStep} />
+        ) : (
+          <OrderComplete />
+        )}
+        <Footer />
+      </div>
+    );
+  }
+}
 
 export default connect(
   null,
