@@ -6,9 +6,11 @@ import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import cartReducer from './reducers/cartReducer';
+import addressReducer from './reducers/adressReducer';
 
 const rootReducer = combineReducers({
-  cartReducer
+  cartReducer,
+  addressReducer
 });
 
 const store = createStore(

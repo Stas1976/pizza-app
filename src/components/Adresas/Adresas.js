@@ -17,24 +17,29 @@ class Adresas extends React.Component {
 
     return (
       <div className={style.container}>
-        <h2>Kur pristatyti?</h2>
-        <div>
+        <h2 className={style.h2}>Kur pristatyti?</h2>
+        <div className={style.selectDelivery}>
           <input
+            className={this.state.activeItem ? style.btn : style.activeBtn}
             type="button"
             onClick={() => this.toggleComponent(0)}
             value="Pristatymas"
           />
           <input
+            className={!this.state.activeItem ? style.btn : style.activeBtn}
             type="button"
             onClick={() => this.toggleComponent(1)}
             value="Išsinešimui"
           />
+          <input className={style.emptyInput} type="button" />
         </div>
-        {this.state.activeItem ? (
-          <Atsiimti nextStep={nextStep} />
-        ) : (
-          <AdresInput nextStep={nextStep} />
-        )}
+        <div className={style.adress}>
+          {this.state.activeItem ? (
+            <Atsiimti nextStep={nextStep} />
+          ) : (
+            <AdresInput nextStep={nextStep} />
+          )}
+        </div>
       </div>
     );
   }

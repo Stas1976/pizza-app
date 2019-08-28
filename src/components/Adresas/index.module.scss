@@ -1,0 +1,76 @@
+@import '../../sass/vars';
+
+.container {
+  width: 600px;
+  margin: 10px auto 20px auto;
+  display: flex;
+  flex-direction: column;
+
+  .h2 {
+    margin: 15px 20px;
+    margin-right: auto;
+  }
+
+  .selectDelivery {
+    height: 40px;
+    margin: 0 20px 20px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .emptyInput {
+      width: 340px;
+      border: none;
+      border-bottom: 2px solid gray;
+      height: 40px;
+      background: white;
+
+      &:focus {
+        outline: none;
+      }
+
+    }
+
+    .btn {
+      height: 40px;
+      width: 120px;
+      font-weight: 600;
+      color: $color-black;
+      background-color: white;
+      border: none;
+      border-bottom: 2px solid gray;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        background-color: gainsboro;
+        border-radius: 15px 15px 0 0;
+      }
+    }
+
+    .activeBtn {
+
+      height: 40px;
+      width: 120px;
+      font-weight: 600;
+      color: $color-orange;
+      background-color: white;
+      border-radius: 15px 15px 0 0;
+      border: 2px solid gray;
+      border-bottom: none;
+
+      &:focus {
+        outline: none;
+      }
+
+    }
+  }
+
+  .adress {
+    padding: 20px;
+  }
+
+}

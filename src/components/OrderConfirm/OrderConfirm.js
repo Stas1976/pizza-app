@@ -18,14 +18,7 @@ const OrderConfirm = ({ cart, nextStep, toggleToOrderConfirmation }) => {
           Atgal į meniu
         </button>
 
-        <button
-          className={style.active}
-          onClick={
-            cart.length <= 0
-              ? alert('Pridėkite ką nors į krepšelį')
-              : () => nextStep(1)
-          }
-        >
+        <button className={style.active} onClick={() => nextStep(1)}>
           Toliau
         </button>
       </div>
