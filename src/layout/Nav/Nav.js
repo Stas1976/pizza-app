@@ -1,12 +1,15 @@
 import React from 'react';
 import style from './index.module.scss';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import logo from '../../assets/logo/pizza.png';
 import BagIcon from '../../components/BagIcon/BagIcon';
-import { connect } from 'react-redux';
 import CartDropDown from '../../components/CartDropDown/CartDropDown';
+import LogIn from '../../components/LogIn/LogIn';
+import LoginModal from '../../components/LoginModal/LoginModal';
 
-const Nav = ({ toggleDropDownCart }) => {
+const Nav = ({ toggleDropDownCart, showLogInModal }) => {
   return (
     <nav className={style.header}>
       <NavLink className={style.logoContainer} to="/">
@@ -41,15 +44,28 @@ const Nav = ({ toggleDropDownCart }) => {
         >
           Gerimai
         </NavLink>
+        <NavLink
+          className={style.option}
+          activeClassName={style.active}
+          to="/uzsakymai"
+        >
+          Užsakymas
+        </NavLink>
         <BagIcon />
       </div>
+      <LogIn />
+
       {toggleDropDownCart ? null : <CartDropDown />}
+      {showLogInModal ? <LoginModal /> : null}
     </nav>
   );
 };
 
 const mapStateToProps = state => {
-  return { toggleDropDownCart: state.cartReducer.toggleDropDownCart };
+  return {
+    toggleDropDownCart: state.cartReducer.toggleDropDownCart,
+    showLogInModal: state.authReducer.togglAuthModal
+  };
 };
 
 export default connect(mapStateToProps)(Nav);

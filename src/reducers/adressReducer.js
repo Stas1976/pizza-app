@@ -9,16 +9,24 @@ const initialState = {
   addressName: '',
   telNumber: '',
   comments: '',
-  address: {}
+  takeItYourSelf: '',
+  deliveryAddress: {},
+  errors: {}
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case types.ADD_ADDRESS_ERRORS:
+      return {
+        ...state,
+        errors: action.errors
+      };
+
     case types.ADDRESS_INPUT_CHANGE:
       return { ...state, [action.name]: action.value };
 
     case types.ADD_ADDRESS:
-      return { ...state, address: action.payload };
+      return { ...state, deliveryAddress: action.payload, errors: {} };
 
     default:
       return state;

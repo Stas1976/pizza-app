@@ -7,7 +7,8 @@ const AdressInput = ({
   nextStep,
   addressInput,
   addressInputChange,
-  addressSubmit
+  addressSubmit,
+  deliveryAddres
 }) => {
   const {
     street,
@@ -17,17 +18,23 @@ const AdressInput = ({
     floor,
     addressName,
     telNumber,
-    comments
+    comments,
+    errors
   } = addressInput;
+
+  // console.log(object);
   return (
     <form
       onSubmit={e => {
         addressSubmit(e, addressInput);
-        nextStep(2);
+        if (Object.keys(deliveryAddres).length) return nextStep(2);
       }}
       className={style.container}
     >
-      <div className={style.street}>
+      <div className={style.streets}>
+        {errors.street ? (
+          <p className={style.error}>Užpildikyte gatvės laukelį</p>
+        ) : null}
         <input
           type="text"
           name="street"
@@ -81,6 +88,9 @@ const AdressInput = ({
           placeholder="Adreso pavadinimas"
         />
 
+        {errors.telNumber ? (
+          <p className={style.error}>Užpildikyte telefono numerio laukelį</p>
+        ) : null}
         <input
           type="text"
           name="telNumber"
@@ -107,8 +117,10 @@ const AdressInput = ({
 };
 
 const mapStateToProps = state => {
+  console.log(state.addressReducer.deliveryAddress);
   return {
-    addressInput: state.addressReducer
+    addressInput: state.addressReducer,
+    deliveryAddres: state.addressReducer.deliveryAddress
   };
 };
 

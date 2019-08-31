@@ -2,7 +2,7 @@
 
 
 .header {
-  height: 50px;
+  height: 150px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -27,7 +27,7 @@
   }
 
   .options {
-    width: 50%;
+    width: 80%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -36,6 +36,19 @@
     .option {
       padding: 10px 15px;
       cursor: pointer;
+    }
+
+    .auth {
+      margin: 0 15px;
+      height: 30px;
+      width: 120px;
+      border: 1px solid $color-orange;
+      border-radius: 15px;
+      color: $color-orange;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }

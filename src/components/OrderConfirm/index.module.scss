@@ -73,5 +73,29 @@
       }
     }
 
+    .activeDisabled {
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      float: left;
+      height: 40px;
+      background: $color-orange;
+      width: 120px;
+      border: 2px solid $color-orange;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      font-size: 14px;
+      cursor: pointer;
+      margin: 0 3px;
+      align-self: center;
+      opacity: 0.6;
+      cursor: not-allowed;
+
+      &:focus {
+        outline: none
+      }
+    }
   }
 }

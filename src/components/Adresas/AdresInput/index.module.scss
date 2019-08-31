@@ -3,12 +3,16 @@
 .container {
   display: felx;
 
-  .street {
+  .streets {
     width: 100%;
     display: flex;
     justify-content: space-between;
     height: 60px;
     padding: 10px 0;
+
+    .error {
+      color: red;
+    }
 
     .streetName {
       height: 100%;
@@ -53,6 +57,10 @@
     height: 60px;
     padding: 10px 0;
     display: flex;
+
+    .error {
+      color: red;
+    }
 
     .tel {
 

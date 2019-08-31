@@ -7,10 +7,12 @@ import { Provider } from 'react-redux';
 
 import cartReducer from './reducers/cartReducer';
 import addressReducer from './reducers/adressReducer';
+import authReducer from './reducers/authReducer';
 
 const rootReducer = combineReducers({
   cartReducer,
-  addressReducer
+  addressReducer,
+  authReducer
 });
 
 const store = createStore(

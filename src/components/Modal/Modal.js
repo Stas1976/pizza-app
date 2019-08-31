@@ -19,7 +19,7 @@ class Modal extends Component {
   infoToggle = () => this.setState({ info: !this.state.info });
 
   render() {
-    const { info, popUp } = this.state;
+    const { info } = this.state;
     const { toggleOnOffModal, addItemToCart } = this.props;
     const { image, name, about } = this.props.selectedPica;
     const selectPizzaBySize = db.Picos.filter(pizza => {

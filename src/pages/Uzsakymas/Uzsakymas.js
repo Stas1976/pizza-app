@@ -28,6 +28,7 @@ class Uzsakymas extends React.Component {
         ) : (
           <OrderComplete />
         )}
+        {/* <route path  */}
         <Footer />
       </div>
     );

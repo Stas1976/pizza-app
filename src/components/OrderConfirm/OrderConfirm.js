@@ -7,7 +7,7 @@ const OrderConfirm = ({ cart, nextStep, toggleToOrderConfirmation }) => {
   const SumOfOrder = cart.reduce((acc, curr) => {
     return acc + curr.price * curr.quantity;
   }, 0);
-
+  const btnDisabled = cart.length;
   return (
     <div className={style.container}>
       <h3 className={style.orderSum}>
@@ -18,9 +18,15 @@ const OrderConfirm = ({ cart, nextStep, toggleToOrderConfirmation }) => {
           Atgal į meniu
         </button>
 
-        <button className={style.active} onClick={() => nextStep(1)}>
-          Toliau
-        </button>
+        {btnDisabled === 0 ? (
+          <button className={style.activeDisabled} disabled>
+            Toliau
+          </button>
+        ) : (
+          <button className={style.active} onClick={() => nextStep(1)}>
+            Toliau
+          </button>
+        )}
       </div>
     </div>
   );
