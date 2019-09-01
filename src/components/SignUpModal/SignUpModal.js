@@ -7,17 +7,16 @@ const SignUpModal = ({
   signUp,
   toggleSignUpModal,
   auth,
-  inputSignUpChange
+  inputSignUpChange,
+  history
 }) => {
   const { firstName, lastName, email, password, errors } = auth;
   return (
     <React.Fragment>
       <div onClick={toggleSignUpModal} className={style.backdrop} />
       <div className={style.container}>
-        <form className={style.form} onSubmit={e => signUp(e, auth)}>
-          {errors.firstName ? (
-            <p className={style.p}>Missing First Name</p>
-          ) : null}
+        <form className={style.form} onSubmit={e => signUp(e, auth, history)}>
+          {errors.firstName && <p className={style.p}>Missing First Name</p>}
           <input
             name="firstName"
             value={firstName}
@@ -26,9 +25,7 @@ const SignUpModal = ({
             placeholder="Vardas..."
             onChange={inputSignUpChange}
           />
-          {errors.lastName ? (
-            <p className={style.p}>Missing Last Name</p>
-          ) : null}
+          {errors.lastName && <p className={style.p}>Missing Last Name</p>}
           <input
             name="lastName"
             value={lastName}
@@ -37,7 +34,7 @@ const SignUpModal = ({
             placeholder="Pavardė..."
             onChange={inputSignUpChange}
           />
-          {errors.email ? <p className={style.p}>Missing email</p> : null}
+          {errors.email && <p className={style.p}>Missing email</p>}
           <input
             name="email"
             value={email}
@@ -46,7 +43,7 @@ const SignUpModal = ({
             placeholder="Email..."
             onChange={inputSignUpChange}
           />
-          {errors.password ? <p className={style.p}>Missing password</p> : null}
+          {errors.password && <p className={style.p}>Missing password</p>}
           <input
             name="password"
             value={password}

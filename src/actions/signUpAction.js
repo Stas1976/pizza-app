@@ -1,4 +1,7 @@
 import * as types from './types';
+import axios from 'axios';
+
+const url = 'http://692803.s.dedikuoti.lt:5000/api/auth/signup';
 
 export const toggleSignUpModal = () => {
   return {
@@ -14,7 +17,7 @@ export const inputSignUpChange = e => {
   };
 };
 
-export const signUp = (e, user) => {
+export const signUp = (e, user, history) => {
   e.preventDefault();
 
   const errors = {};
@@ -28,4 +31,20 @@ export const signUp = (e, user) => {
       errors
     };
   }
+
+  return async dispatch => {
+    try {
+      const res = await axios.post(url, user);
+
+      //isaugom JWT token to local storage
+      localStorage.setItem('word_auth_token', res.data);
+      dispatch({
+        type: types.LOG_IN,
+        user
+      });
+      history.push('/');
+    } catch (e) {
+      console.log(e.response);
+    }
+  };
 };

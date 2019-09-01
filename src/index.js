@@ -2,24 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './sass/index.scss';
 import App from './App';
-import { combineReducers, createStore } from 'redux';
+import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 
 import cartReducer from './reducers/cartReducer';
 import addressReducer from './reducers/adressReducer';
 import logInReducer from './reducers/logInReducer';
 import signUpReducer from './reducers/signUpReducer';
+import profileReducer from './reducers/profileReducer';
 
 const rootReducer = combineReducers({
   cartReducer,
   addressReducer,
   logInReducer,
-  signUpReducer
+  signUpReducer,
+  profileReducer
 });
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeEnhancers(applyMiddleware(thunk))
 );
 
 ReactDOM.render(

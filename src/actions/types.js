@@ -19,3 +19,4 @@ export const LOGIN_INPUT_CHANGE = ' AUTH_INPUT_CHANGE';
 export const TOGGLE_SIGNUP_MODAL = 'TOGGLE_SIGNUP_MODAL';
 export const SIGN_UP_INPUT_CHANG = 'SIGN_UP_INPUT_CHANGE';
 export const AUTH_ERROR = ' AUTH_ERROR';
+export const LOG_IN = 'LOG_IN';

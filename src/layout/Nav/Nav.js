@@ -8,10 +8,10 @@ import BagIcon from '../../components/BagIcon/BagIcon';
 import CartDropDown from '../../components/CartDropDown/CartDropDown';
 import LogIn from '../../components/LogIn/LogIn';
 import LoginModal from '../../components/LoginModal/LoginModal';
-import SignUp from '../../components/SignIn/SgnIn';
-import SignUpModal from '../../components/SignUpModal/SignUpModal';
 
-const Nav = ({ toggleDropDownCart, showLogInModal, showSignUpModal }) => {
+const Nav = ({ toggleDropDownCart, showLogInModal, profile }) => {
+  console.log(Object.keys(profile).length);
+
   return (
     <nav className={style.header}>
       <NavLink className={style.logoContainer} to="/">
@@ -55,11 +55,13 @@ const Nav = ({ toggleDropDownCart, showLogInModal, showSignUpModal }) => {
         </NavLink>
         <BagIcon />
       </div>
+
+      <NavLink className={style.signup} to="/signup">
+        <h4>Užsiregistruoti</h4>
+      </NavLink>
       <LogIn />
-      <SignUp />
       {toggleDropDownCart ? null : <CartDropDown />}
       {showLogInModal ? <LoginModal /> : null}
-      {showSignUpModal ? <SignUpModal /> : null}
     </nav>
   );
 };
@@ -68,7 +70,7 @@ const mapStateToProps = state => {
   return {
     toggleDropDownCart: state.cartReducer.toggleDropDownCart,
     showLogInModal: state.logInReducer.togglLogInModal,
-    showSignUpModal: state.signUpReducer.toggleSignUpModal
+    profile: state.profileReducer
   };
 };
 
