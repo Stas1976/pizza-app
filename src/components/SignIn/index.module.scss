@@ -1,0 +1,21 @@
+@import '../../sass/vars';
+
+.container {
+  border: 1px solid $color-orange;
+  height: 30px;
+  width: 140px;
+  position: absolute;
+  right: 160px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  color: $color-black;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+    background-color: $color-orange;
+  }
+}

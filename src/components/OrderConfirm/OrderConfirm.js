@@ -3,7 +3,12 @@ import style from './index.module.scss';
 import { connect } from 'react-redux';
 import * as action from '../../actions/cartAction';
 
-const OrderConfirm = ({ cart, nextStep, toggleToOrderConfirmation }) => {
+const OrderConfirm = ({
+  cart,
+  nextStep,
+  toggleToOrderConfirmation,
+  clearCart
+}) => {
   const SumOfOrder = cart.reduce((acc, curr) => {
     return acc + curr.price * curr.quantity;
   }, 0);
@@ -23,7 +28,13 @@ const OrderConfirm = ({ cart, nextStep, toggleToOrderConfirmation }) => {
             Toliau
           </button>
         ) : (
-          <button className={style.active} onClick={() => nextStep(1)}>
+          <button
+            className={style.active}
+            onClick={() => {
+              clearCart();
+              nextStep(1);
+            }}
+          >
             Toliau
           </button>
         )}

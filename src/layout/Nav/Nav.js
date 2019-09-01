@@ -8,8 +8,10 @@ import BagIcon from '../../components/BagIcon/BagIcon';
 import CartDropDown from '../../components/CartDropDown/CartDropDown';
 import LogIn from '../../components/LogIn/LogIn';
 import LoginModal from '../../components/LoginModal/LoginModal';
+import SignUp from '../../components/SignIn/SgnIn';
+import SignUpModal from '../../components/SignUpModal/SignUpModal';
 
-const Nav = ({ toggleDropDownCart, showLogInModal }) => {
+const Nav = ({ toggleDropDownCart, showLogInModal, showSignUpModal }) => {
   return (
     <nav className={style.header}>
       <NavLink className={style.logoContainer} to="/">
@@ -54,9 +56,10 @@ const Nav = ({ toggleDropDownCart, showLogInModal }) => {
         <BagIcon />
       </div>
       <LogIn />
-
+      <SignUp />
       {toggleDropDownCart ? null : <CartDropDown />}
       {showLogInModal ? <LoginModal /> : null}
+      {showSignUpModal ? <SignUpModal /> : null}
     </nav>
   );
 };
@@ -64,7 +67,8 @@ const Nav = ({ toggleDropDownCart, showLogInModal }) => {
 const mapStateToProps = state => {
   return {
     toggleDropDownCart: state.cartReducer.toggleDropDownCart,
-    showLogInModal: state.authReducer.togglAuthModal
+    showLogInModal: state.logInReducer.togglLogInModal,
+    showSignUpModal: state.signUpReducer.toggleSignUpModal
   };
 };
 
