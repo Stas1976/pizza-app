@@ -48,3 +48,5 @@ export const signUp = (e, user, history) => {
     }
   };
 };
+
+export const logIn = (e, user, history) => {};

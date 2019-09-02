@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import jwt from 'jsonwebtoken';
 
 import Uzsakymas from './pages/Uzsakymas/Uzsakymas';
-import Login from './components/LogIn/LogIn';
+import Login from './components/LoginModal/LoginModal';
 import SignUpModal from './components/SignUpModal/SignUpModal';
 import Nav from './layout/Nav/Nav';
 import Home from './pages/Home/Home';

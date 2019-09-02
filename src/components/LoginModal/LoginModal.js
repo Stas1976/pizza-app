@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as action from '../../actions/logInAction';
 
-const SignUp = props => {
+const LogIn = ({ auth, logIn }) => {
   return (
     <React.Fragment>
       <div onClick={props.toggleLogInModal} className={style.backdrop} />
       <div className={style.container}>
         <h4>Prisijungti</h4>
-        <form className={style.form} onSubmit>
+        <form className={style.form} onSubmit={e => logIn(e, auth, history)}>
           <input className={style.input} type="email" placeholder="Email..." />
           <input
             className={style.input}
@@ -30,7 +30,11 @@ const SignUp = props => {
   );
 };
 
+const mapStateToProps = state => {
+  return { auth: state.signUpReduser };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   action
-)(SignUp);
+)(LogIn);

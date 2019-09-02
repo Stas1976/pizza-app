@@ -6,10 +6,8 @@ import { connect } from 'react-redux';
 import logo from '../../assets/logo/pizza.png';
 import BagIcon from '../../components/BagIcon/BagIcon';
 import CartDropDown from '../../components/CartDropDown/CartDropDown';
-import LogIn from '../../components/LogIn/LogIn';
-import LoginModal from '../../components/LoginModal/LoginModal';
 
-const Nav = ({ toggleDropDownCart, showLogInModal, profile }) => {
+const Nav = ({ toggleDropDownCart, profile }) => {
   console.log(Object.keys(profile).length);
 
   return (
@@ -59,9 +57,11 @@ const Nav = ({ toggleDropDownCart, showLogInModal, profile }) => {
       <NavLink className={style.signup} to="/signup">
         <h4>Užsiregistruoti</h4>
       </NavLink>
-      <LogIn />
+      <NavLink className={style.login} to="/login">
+        <h4>Prisijungti</h4>
+      </NavLink>
+
       {toggleDropDownCart ? null : <CartDropDown />}
-      {showLogInModal ? <LoginModal /> : null}
     </nav>
   );
 };
