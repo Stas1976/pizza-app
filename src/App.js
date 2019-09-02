@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import jwt from 'jsonwebtoken';
 
 import Uzsakymas from './pages/Uzsakymas/Uzsakymas';
 import Login from './components/LoginModal/LoginModal';

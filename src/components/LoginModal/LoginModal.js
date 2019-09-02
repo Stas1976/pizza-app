@@ -2,20 +2,30 @@ import React from 'react';
 import style from './index.module.scss';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import * as action from '../../actions/logInAction';
+import * as action from '../../actions/signUpAction';
 
-const LogIn = ({ auth, logIn }) => {
+const LogIn = ({ auth, logIn, history, onInputChange }) => {
+  const { email, password } = auth;
   return (
     <React.Fragment>
-      <div onClick={props.toggleLogInModal} className={style.backdrop} />
       <div className={style.container}>
         <h4>Prisijungti</h4>
         <form className={style.form} onSubmit={e => logIn(e, auth, history)}>
-          <input className={style.input} type="email" placeholder="Email..." />
           <input
+            name="email"
+            value={email}
+            className={style.input}
+            type="email"
+            placeholder="Email..."
+            onChange={onInputChange}
+          />
+          <input
+            name="password"
+            value={password}
             className={style.input}
             type="password"
             placeholder="password"
+            onChange={onInputChange}
           />
           <button className={style.btn}>Prisijungti</button>
         </form>
@@ -31,7 +41,7 @@ const LogIn = ({ auth, logIn }) => {
 };
 
 const mapStateToProps = state => {
-  return { auth: state.signUpReduser };
+  return { auth: state.signUpReducer };
 };
 
 export default connect(

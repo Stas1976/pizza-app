@@ -8,6 +8,8 @@ const initialStatte = {
 
 export default (state = initialStatte, action) => {
   switch (action.type) {
+    case types.LOG_OUT:
+      return initialStatte;
     case types.LOG_IN:
       return {
         firstName: action.user.firstName,

@@ -8,6 +8,10 @@
   justify-content: space-between;
   margin-bottom: 10px;
 
+  .profileContainer {
+    border: 1px solid red;
+  }
+
   .signup {
     border: 1px solid $color-orange;
     height: 30px;

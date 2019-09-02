@@ -3,17 +3,10 @@ import style from './index.module.scss';
 import { connect } from 'react-redux';
 import * as action from '../../actions/signUpAction';
 
-const SignUpModal = ({
-  signUp,
-  toggleSignUpModal,
-  auth,
-  inputSignUpChange,
-  history
-}) => {
+const SignUpModal = ({ signUp, auth, onInputChange, history }) => {
   const { firstName, lastName, email, password, errors } = auth;
   return (
     <React.Fragment>
-      <div onClick={toggleSignUpModal} className={style.backdrop} />
       <div className={style.container}>
         <form className={style.form} onSubmit={e => signUp(e, auth, history)}>
           {errors.firstName && <p className={style.p}>Missing First Name</p>}
@@ -23,7 +16,7 @@ const SignUpModal = ({
             className={style.input}
             type="text"
             placeholder="Vardas..."
-            onChange={inputSignUpChange}
+            onChange={onInputChange}
           />
           {errors.lastName && <p className={style.p}>Missing Last Name</p>}
           <input
@@ -32,7 +25,7 @@ const SignUpModal = ({
             className={style.input}
             type="text"
             placeholder="Pavardė..."
-            onChange={inputSignUpChange}
+            onChange={onInputChange}
           />
           {errors.email && <p className={style.p}>Missing email</p>}
           <input
@@ -41,7 +34,7 @@ const SignUpModal = ({
             className={style.input}
             type="email"
             placeholder="Email..."
-            onChange={inputSignUpChange}
+            onChange={onInputChange}
           />
           {errors.password && <p className={style.p}>Missing password</p>}
           <input
@@ -50,7 +43,7 @@ const SignUpModal = ({
             className={style.input}
             type="password"
             placeholder="password"
-            onChange={inputSignUpChange}
+            onChange={onInputChange}
           />
           <button className={style.btn}>Sukurti paskyrą</button>
         </form>

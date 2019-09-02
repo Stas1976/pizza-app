@@ -1,7 +1,8 @@
 import * as types from './types';
 import axios from 'axios';
+import jwt from 'jsonwebtoken';
 
-const url = 'http://692803.s.dedikuoti.lt:5000/api/auth/signup';
+const url = 'http://692803.s.dedikuoti.lt:5000/api/auth/';
 
 export const toggleSignUpModal = () => {
   return {
@@ -9,9 +10,9 @@ export const toggleSignUpModal = () => {
   };
 };
 
-export const inputSignUpChange = e => {
+export const onInputChange = e => {
   return {
-    type: types.SIGN_UP_INPUT_CHANG,
+    type: types.AUTH_INPUT_CHANG,
     name: e.target.name,
     value: e.target.value
   };
@@ -34,10 +35,14 @@ export const signUp = (e, user, history) => {
 
   return async dispatch => {
     try {
-      const res = await axios.post(url, user);
+      const res = await axios.post(url + 'signup', user);
 
       //isaugom JWT token to local storage
       localStorage.setItem('word_auth_token', res.data);
+
+      //! how it's working?
+      axios.defaults.headers.common['Authorization'] = 'Berrer ' + res.data;
+
       dispatch({
         type: types.LOG_IN,
         user
@@ -49,4 +54,50 @@ export const signUp = (e, user, history) => {
   };
 };
 
-export const logIn = (e, user, history) => {};
+export const logIn = (e, user, history) => {
+  e.preventDefault();
+
+  const errors = {};
+  if (!user.email) errors.email = 'missing email';
+  if (!user.password) errors.password = 'missing password';
+  if (Object.keys(errors).length) {
+    return {
+      type: types.AUTH_ERROR,
+      errors
+    };
+  }
+
+  return async dispatch => {
+    try {
+      const res = await axios.post(url + 'login', user);
+      const userData = jwt.decode(res.data);
+      dispatch({
+        type: types.LOG_IN,
+        user: userData
+      });
+
+      //! 'word_auth_token' ????
+      localStorage.setItem('word_auth_token', res.data);
+
+      axios.defaults.headers.common['Authorization'] = 'Berrer ' + res.data;
+      history.push('/');
+    } catch (error) {
+      console.log(error.res);
+
+      dispatch({
+        type: types.AUTH_ERROR,
+        errors: { email: 'Invalid email or password' }
+      });
+    }
+  };
+};
+
+export const logOut = history => {
+  localStorage.removeItem('word_auth_token');
+  console.log(history);
+  delete axios.defaults.headers.common['Authorization'];
+  // history.push('/');
+  return {
+    type: types.LOG_OUT
+  };
+};
