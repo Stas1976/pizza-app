@@ -21,3 +21,4 @@ export const AUTH_INPUT_CHANG = 'AUTH_INPUT_CHANGE';
 export const AUTH_ERROR = ' AUTH_ERROR';
 export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
+export const TOGGLE_DELETE_PROFILE_MODAL = 'TOGGLE_DELETE_PROFILE_MODAL';

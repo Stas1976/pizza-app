@@ -40,18 +40,21 @@ export const signUp = (e, user, history) => {
       //isaugom JWT token to local storage
       localStorage.setItem('word_auth_token', res.data);
 
-      //! how it's working?
       axios.defaults.headers.common['Authorization'] = 'Berrer ' + res.data;
 
       dispatch({
         type: types.LOG_IN,
         user
       });
-      history.push('/');
+      history.push('/picos');
     } catch (e) {
       console.log(e.response);
     }
   };
+};
+
+export const deleteProfile = (profile, history) => {
+  console.log(profile);
 };
 
 export const logIn = (e, user, history) => {
@@ -76,11 +79,10 @@ export const logIn = (e, user, history) => {
         user: userData
       });
 
-      //! 'word_auth_token' ????
       localStorage.setItem('word_auth_token', res.data);
 
       axios.defaults.headers.common['Authorization'] = 'Berrer ' + res.data;
-      history.push('/');
+      history.push('/picos');
     } catch (error) {
       console.log(error.res);
 
@@ -94,10 +96,15 @@ export const logIn = (e, user, history) => {
 
 export const logOut = history => {
   localStorage.removeItem('word_auth_token');
-  console.log(history);
   delete axios.defaults.headers.common['Authorization'];
   // history.push('/');
   return {
     type: types.LOG_OUT
+  };
+};
+
+export const toggleDeleteProfileModal = () => {
+  return {
+    type: types.TOGGLE_DELETE_PROFILE_MODAL
   };
 };

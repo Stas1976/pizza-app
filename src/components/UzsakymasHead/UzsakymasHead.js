@@ -7,12 +7,9 @@ import style from './index.module.scss';
 const UzsakymasHead = ({ toggleToOrderConfirmation, activeStep }) => {
   return (
     <div className={style.header}>
-      <img
-        onClick={toggleToOrderConfirmation}
-        src={logo}
-        alt="logo"
-        className={style.image}
-      />
+      <div className={style.image}>
+        <h3>Jūsų užsakymas</h3>
+      </div>
       <div className={style.steps}>
         <div className={activeStep === 0 ? style.active : style.cart}>
           <span className={style.number}>1</span>

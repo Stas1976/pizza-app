@@ -22,7 +22,7 @@ function App({ orderConfirmation, showLogInModal }) {
         {/* <ProtectedRoute /> */}
         <React.Fragment>
           <Nav />
-          <Route exact path="/" component={Home} />
+          {/* <Route exact path="/" component={Home} /> */}
           <Route path="/picos" component={Picos} />
           <Route path="/uzkandziai" component={Uzkandziai} />
           <Route path="/desertai" component={Desertai} />

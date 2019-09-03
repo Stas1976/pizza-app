@@ -1,0 +1,54 @@
+@import '../../sass/vars';
+
+.container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  z-index: 3;
+  background: #fff;
+  border-radius: 5px;
+  height: 70%;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .form {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 20px 0;
+
+
+
+    .btn {
+      width: 80px;
+      border: 1px solid $color-orange;
+      background-color: white;
+      border-radius: 20px;
+      margin: 0 auto 0 auto;
+      height: 25px;
+      cursor: pointer;
+
+      &:hover {
+        background: $color-orange;
+        color: white;
+      }
+    }
+  }
+
+
+}
+
+.backdrop {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  left: 0;
+  top: 0;
+  z-index: 2;
+}

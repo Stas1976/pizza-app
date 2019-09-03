@@ -2,6 +2,7 @@ import React from 'react';
 import style from './index.module.scss';
 import { connect } from 'react-redux';
 import * as action from '../../actions/cartAction';
+import { Link } from 'react-router-dom';
 
 const Cart = ({
   cart,
@@ -54,7 +55,8 @@ const Cart = ({
   return (
     <div className={style.container}>
       <ul>{itemsInCart}</ul>
-      <button
+      <Link
+        to="/uzsakymai"
         onClick={() => {
           toggleToOrderConfirmation();
           hiddeDropDownCart();
@@ -62,7 +64,7 @@ const Cart = ({
         className={style.btn}
       >
         Užsakyti
-      </button>
+      </Link>
     </div>
   );
 };

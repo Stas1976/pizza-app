@@ -7,11 +7,18 @@ import * as action from '../../actions/signUpAction';
 import logo from '../../assets/logo/pizza.png';
 import BagIcon from '../../components/BagIcon/BagIcon';
 import CartDropDown from '../../components/CartDropDown/CartDropDown';
+import DeleteProfileModal from '../../components/DeleteProfileModal/DeleteProfileModal';
 
-const Nav = ({ toggleDropDownCart, profile, logOut, history }) => {
+const Nav = ({
+  toggleDropDownCart,
+  profile,
+  logOut,
+  history,
+  toggleDeleteProfileModal
+}) => {
   return (
     <nav className={style.header}>
-      <NavLink className={style.logoContainer} to="/">
+      <NavLink className={style.logoContainer} to="/picos">
         <img src={logo} alt="pizza logo" className={style.logo} />
       </NavLink>
       <div className={style.options}>
@@ -61,6 +68,9 @@ const Nav = ({ toggleDropDownCart, profile, logOut, history }) => {
           <span className={style.logout} onClick={() => logOut(history)}>
             Log Out
           </span>
+          <span className={style.logout} onClick={toggleDeleteProfileModal}>
+            Delete Profile
+          </span>
         </div>
       ) : (
         <div>
@@ -72,7 +82,7 @@ const Nav = ({ toggleDropDownCart, profile, logOut, history }) => {
           </NavLink>
         </div>
       )}
-
+      {profile.toggleDeleteModal ? <DeleteProfileModal /> : null}
       {toggleDropDownCart ? null : <CartDropDown />}
     </nav>
   );

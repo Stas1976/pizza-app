@@ -9,7 +9,28 @@
   margin-bottom: 10px;
 
   .profileContainer {
-    border: 1px solid red;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    height: 30px;
+
+    .profileName {
+      font-weight: 600;
+
+    }
+
+    .logout {
+      color: $color-orange;
+      cursor: pointer;
+
+      &:hover {
+        color: rgb(211, 104, 65);
+      }
+    }
   }
 
   .signup {

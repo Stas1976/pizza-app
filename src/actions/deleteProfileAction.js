@@ -2,6 +2,6 @@ import * as types from './types';
 
 export const toggleLogInModal = () => {
   return {
-    type: types.TOOGLE_LOGIN_MODAL
+    type: types.TOGGLE_DELETE_PROFILE_MODAL
   };
 };
