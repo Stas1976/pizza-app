@@ -112,7 +112,9 @@ export const toggleDeleteProfileModal = () => {
 export const deleteProfile = _id => {
   return async function(dispatch) {
     try {
-      await axios.delete(urldel);
+      const res = await axios.delete(urldel);
+      localStorage.removeItem('word_auth_token', res.data);
+      axios.defaults.headers.common['Authorization'] = 'Berrer ' + res.data;
       dispatch({
         type: types.DELETE_PROFILE,
         _id
