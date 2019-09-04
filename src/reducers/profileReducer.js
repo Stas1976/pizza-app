@@ -9,6 +9,14 @@ const initialStatte = {
 
 export default (state = initialStatte, action) => {
   switch (action.type) {
+    case types.DELETE_PROFILE:
+      return {
+        ...state,
+        firstName: '',
+        lastName: '',
+        email: ''
+      };
+
     case types.TOGGLE_DELETE_PROFILE_MODAL:
       return {
         ...state,

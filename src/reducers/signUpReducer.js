@@ -11,6 +11,15 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case types.DELETE_PROFILE:
+      return {
+        ...state,
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: ''
+      };
+
     case types.LOG_OUT:
       return initialState;
 

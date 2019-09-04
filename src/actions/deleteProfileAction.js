@@ -1,7 +1,8 @@
 import * as types from './types';
 
-export const toggleLogInModal = () => {
+export const deleteProfile = payload => {
   return {
-    type: types.TOGGLE_DELETE_PROFILE_MODAL
+    type: types.DELETE_PROFILE,
+    payload
   };
 };

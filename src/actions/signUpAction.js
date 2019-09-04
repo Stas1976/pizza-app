@@ -3,7 +3,7 @@ import axios from 'axios';
 import jwt from 'jsonwebtoken';
 
 const url = 'http://692803.s.dedikuoti.lt:5000/api/auth/';
-
+const urldel = 'http://692803.s.dedikuoti.lt:5000/api/profile';
 export const toggleSignUpModal = () => {
   return {
     type: types.TOGGLE_SIGNUP_MODAL
@@ -53,9 +53,9 @@ export const signUp = (e, user, history) => {
   };
 };
 
-export const deleteProfile = (profile, history) => {
-  console.log(profile);
-};
+// export const deleteProfile = (profile, history) => {
+//   console.log(profile);
+// };
 
 export const logIn = (e, user, history) => {
   e.preventDefault();
@@ -106,5 +106,19 @@ export const logOut = history => {
 export const toggleDeleteProfileModal = () => {
   return {
     type: types.TOGGLE_DELETE_PROFILE_MODAL
+  };
+};
+
+export const deleteProfile = _id => {
+  return async function(dispatch) {
+    try {
+      await axios.delete(urldel);
+      dispatch({
+        type: types.DELETE_PROFILE,
+        _id
+      });
+    } catch (error) {
+      console.log(error.response);
+    }
   };
 };
