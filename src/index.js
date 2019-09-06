@@ -11,13 +11,15 @@ import addressReducer from './reducers/adressReducer';
 import logInReducer from './reducers/logInReducer';
 import signUpReducer from './reducers/signUpReducer';
 import profileReducer from './reducers/profileReducer';
+import googleAuthReducer from './reducers/googleAuthReducer';
 
 const rootReducer = combineReducers({
   cartReducer,
   addressReducer,
   logInReducer,
   signUpReducer,
-  profileReducer
+  profileReducer,
+  googleAuthReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

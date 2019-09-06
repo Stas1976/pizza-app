@@ -1,10 +1,9 @@
 import React from 'react';
-import logo from '../../assets/logo/pizza.png';
 import { connect } from 'react-redux';
 import * as action from '../../actions/cartAction';
 import style from './index.module.scss';
 
-const UzsakymasHead = ({ toggleToOrderConfirmation, activeStep }) => {
+const UzsakymasHead = ({ activeStep }) => {
   return (
     <div className={style.header}>
       <div className={style.image}>

@@ -7,6 +7,7 @@ import * as action from '../../actions/signUpAction';
 import logo from '../../assets/logo/pizza.png';
 import BagIcon from '../../components/BagIcon/BagIcon';
 import CartDropDown from '../../components/CartDropDown/CartDropDown';
+
 import DeleteProfileModal from '../../components/DeleteProfileModal/DeleteProfileModal';
 
 const Nav = ({
@@ -18,7 +19,7 @@ const Nav = ({
 }) => {
   return (
     <nav className={style.header}>
-      <NavLink className={style.logoContainer} to="/picos">
+      <NavLink className={style.logoContainer} to="/">
         <img src={logo} alt="pizza logo" className={style.logo} />
       </NavLink>
       <div className={style.options}>
@@ -82,6 +83,7 @@ const Nav = ({
           </NavLink>
         </div>
       )}
+      {/* <GoogleAuth /> */}
       {profile.toggleDeleteModal ? <DeleteProfileModal /> : null}
       {toggleDropDownCart ? null : <CartDropDown />}
     </nav>

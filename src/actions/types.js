@@ -23,3 +23,9 @@ export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
 export const TOGGLE_DELETE_PROFILE_MODAL = 'TOGGLE_DELETE_PROFILE_MODAL';
 export const DELETE_PROFILE = 'DELETE_PROFILE';
+
+//Google Auth
+export const SIGNED_IN = 'SIGNED_IN';
+export const SIGNED_OUT = 'SIGNED_OUT';
+
+// export const
