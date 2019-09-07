@@ -12,7 +12,7 @@ export const CLEAR_CART = 'CLEAR_CART';
 export const ADD_ADDRESS = 'ADD_ADDRESS';
 export const ADDRESS_INPUT_CHANGE = 'ADDRESS_INPUT_CHANGE';
 export const ADD_ADDRESS_ERRORS = 'ADD_ADDRESS_ERRORS';
-
+export const TAKE_AWAY = 'TAKE_AWAY';
 //authorithation
 export const TOOGLE_LOGIN_MODAL = 'TOOGLE_AUTH_MODAL';
 export const LOGIN_INPUT_CHANGE = ' AUTH_INPUT_CHANGE';

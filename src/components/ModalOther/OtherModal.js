@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import style from './index.module.scss';
 import * as action from '../../actions/cartAction';
 import { connect } from 'react-redux';
-import { db } from '../../assets/db/db';
 
 class Modal extends Component {
   state = {
@@ -18,12 +17,6 @@ class Modal extends Component {
     const { info } = this.state;
     const { toggleOnOffModal, addItemToCart } = this.props;
     const { image, name, about } = this.props.selectedPica;
-    // const selectPizzaBySize = db.Uzkandziai.filter(pizza => {
-    //   return (
-    //     this.props.selectedPica.name === pizza.name &&
-    //     this.state.pizzaSize === pizza.size
-    //   );
-    // });
 
     return (
       <React.Fragment>

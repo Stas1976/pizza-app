@@ -27,3 +27,9 @@ export const addressInputChange = payload => {
     value: payload.target.value
   };
 };
+export const takeAwaySubmit = payload => {
+  return {
+    type: types.TAKE_AWAY,
+    payload
+  };
+};

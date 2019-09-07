@@ -1,5 +1,4 @@
 import * as types from '../actions/types';
-import { switchCase } from '@babel/types';
 
 const initialStates = {
   signedIn: false,

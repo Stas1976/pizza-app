@@ -11,11 +11,18 @@ const initialState = {
   comments: '',
   takeItYourSelf: '',
   deliveryAddress: {},
-  errors: {}
+  errors: {},
+  takeAway: ''
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case types.TAKE_AWAY:
+      return {
+        ...state,
+        takeAway: action.payload
+      };
+
     case types.ADD_ADDRESS_ERRORS:
       return {
         ...state,
