@@ -13,6 +13,8 @@ import signUpReducer from './reducers/signUpReducer';
 import profileReducer from './reducers/profileReducer';
 import googleAuthReducer from './reducers/googleAuthReducer';
 
+//replace app to the another dir
+
 const rootReducer = combineReducers({
   cartReducer,
   addressReducer,
