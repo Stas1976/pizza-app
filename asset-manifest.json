@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/pizza-app/static/css/main.dcf65fb4.chunk.css",
+    "main.js": "/pizza-app/static/js/main.e448e7c1.chunk.js",
+    "main.js.map": "/pizza-app/static/js/main.e448e7c1.chunk.js.map",
+    "runtime~main.js": "/pizza-app/static/js/runtime~main.71e678ff.js",
+    "runtime~main.js.map": "/pizza-app/static/js/runtime~main.71e678ff.js.map",
+    "static/js/2.d3336375.chunk.js": "/pizza-app/static/js/2.d3336375.chunk.js",
+    "static/js/2.d3336375.chunk.js.map": "/pizza-app/static/js/2.d3336375.chunk.js.map",
+    "index.html": "/pizza-app/index.html",
+    "precache-manifest.dd21e70eb377cc2b7a03aee1ca078d5b.js": "/pizza-app/precache-manifest.dd21e70eb377cc2b7a03aee1ca078d5b.js",
+    "service-worker.js": "/pizza-app/service-worker.js",
+    "static/css/main.dcf65fb4.chunk.css.map": "/pizza-app/static/css/main.dcf65fb4.chunk.css.map",
+    "static/media/brusketa.jpg": "/pizza-app/static/media/brusketa.15cf82a8.jpg",
+    "static/media/cezario.jpg": "/pizza-app/static/media/cezario.66e56505.jpg",
+    "static/media/chickenBBQ.jpg": "/pizza-app/static/media/chickenBBQ.2889f5f4.jpg",
+    "static/media/crazy.jpg": "/pizza-app/static/media/crazy.11d8e7b9.jpg",
+    "static/media/dodo.jpg": "/pizza-app/static/media/dodo.6af393d1.jpg",
+    "static/media/graikiskas.jpg": "/pizza-app/static/media/graikiskas.9013caf6.jpg",
+    "static/media/margherita.jpg": "/pizza-app/static/media/margherita.817f1507.jpg",
+    "static/media/mexican.jpg": "/pizza-app/static/media/mexican.acf26594.jpg",
+    "static/media/mufinas.jpg": "/pizza-app/static/media/mufinas.a7ef09a1.jpg",
+    "static/media/pizza.png": "/pizza-app/static/media/pizza.ea788dd3.png",
+    "static/media/royal.jpg": "/pizza-app/static/media/royal.fefdb53b.jpg",
+    "static/media/seafood.jpg": "/pizza-app/static/media/seafood.ec6f5442.jpg",
+    "static/media/seasons4.jpg": "/pizza-app/static/media/seasons4.7c918ca2.jpg",
+    "static/media/sparneliai.jpg": "/pizza-app/static/media/sparneliai.334f0057.jpg"
+  }
+}
