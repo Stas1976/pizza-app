@@ -3,7 +3,7 @@ import style from './index.module.scss';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as action from '../../actions/signUpAction';
-import GoogleAuth from '../GoogleAuth/GoogleAuth';
+// import GoogleAuth from '../GoogleAuth/GoogleAuth';
 
 const LogIn = ({ auth, logIn, history, onInputChange }) => {
   const { email, password } = auth;
@@ -30,7 +30,7 @@ const LogIn = ({ auth, logIn, history, onInputChange }) => {
           />
           <button className={style.btn}>Prisijungti</button>
         </form>
-        <GoogleAuth />
+        {/* <GoogleAuth /> */}
         <div className={style.link}>
           <h4>Neturitė pskyros?</h4>
           <Link to="/signup" className={style.linkNewAccount}>
