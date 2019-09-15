@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Uzsakymas from './pages/Uzsakymas/Uzsakymas';
@@ -13,7 +13,7 @@ import Gerimai from './pages/Gerimai/Gerimai';
 
 function App({ orderConfirmation, showLogInModal }) {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={SignUpModal} />
@@ -28,7 +28,7 @@ function App({ orderConfirmation, showLogInModal }) {
           <Route path="/uzsakymai" component={Uzsakymas} />
         </React.Fragment>
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 const mapStateToProps = state => {
