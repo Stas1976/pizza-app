@@ -2,8 +2,8 @@ import * as types from './types';
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
 
-const url = 'http://692803.s.dedikuoti.lt:5000/api/auth/';
-const urldel = 'http://692803.s.dedikuoti.lt:5000/api/profile';
+const url = 'https://692803.s.dedikuoti.lt:5000/api/auth/';
+const urldel = 'https://692803.s.dedikuoti.lt:5000/api/profile';
 export const toggleSignUpModal = () => {
   return {
     type: types.TOGGLE_SIGNUP_MODAL
