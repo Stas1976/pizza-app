@@ -4,19 +4,16 @@ import { connect } from 'react-redux';
 import * as action from '../../actions/cartAction';
 import EmptyDropDownCart from '../EmptyDropDownCart/EmptyDropDownCart';
 import Cart from '../Cart/Cart';
+import onClickOutside from 'react-onclickoutside';
 
 class CartDropDown extends React.Component {
-  // componentDidMount(){
-  //   document.addEventListener('mousedown', this.handleClickOutside)
-  // }
+  state = {
+    clickeOutside: true
+  };
 
-  // componentWillUnmount(){
-  //   document.removeEventListener('mousedown', this.handleClickOutside)
-  // }
-
-  // setWrapperRef = (node) => {
-
-  // }
+  handleClickOutside = () => {
+    this.props.hiddeDropDownCart();
+  };
 
   render() {
     const { cart, hiddeDropDownCart } = this.props;
@@ -45,4 +42,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   action
-)(CartDropDown);
+)(onClickOutside(CartDropDown));

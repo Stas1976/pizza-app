@@ -30,7 +30,7 @@ const LogIn = ({ auth, logIn, history, onInputChange }) => {
           />
           <button className={style.btn}>Prisijungti</button>
         </form>
-        <GoogleAuth />
+        {/* <GoogleAuth /> */}
         <div className={style.link}>
           <h4>Neturitė pskyros?</h4>
           <Link to="/signup" className={style.linkNewAccount}>
