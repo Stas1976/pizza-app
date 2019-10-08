@@ -75,9 +75,9 @@ const Nav = ({
         </div>
       ) : (
         <div>
-          <NavLink className={style.signup} to="/signup">
+          {/* <NavLink className={style.signup} to="/signup">
             <h4>Užsiregistruoti</h4>
-          </NavLink>
+          </NavLink> */}
           <NavLink className={style.login} to="/login">
             <h4>Prisijungti</h4>
           </NavLink>
