@@ -15,7 +15,7 @@ const SignUpModal = ({ signUp, auth, onInputChange, history }) => {
             value={firstName}
             className={style.input}
             type="text"
-            placeholder="Vardas..."
+            placeholder="Vardas"
             onChange={onInputChange}
           />
           {errors.lastName && <p className={style.p}>Missing Last Name</p>}
